@@ -1,0 +1,8 @@
+CREATE INDEX idx_ports_location
+ON ports(location_id);
+
+CREATE INDEX idx_ports_port_type
+ON ports(port_type);
+
+CREATE INDEX idx_ports_international
+ON ports(is_international);
