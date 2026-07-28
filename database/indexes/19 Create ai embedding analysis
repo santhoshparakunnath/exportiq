@@ -1,0 +1,6 @@
+CREATE INDEX idx_ai_embeddings_analysis
+ON ai_embeddings(ai_analysis_id);
+
+CREATE INDEX idx_ai_embedding_vector
+ON ai_embeddings
+USING hnsw (embedding vector_cosine_ops);
