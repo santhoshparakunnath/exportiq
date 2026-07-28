@@ -1,0 +1,5 @@
+CREATE INDEX idx_ai_prompts_category
+ON ai_prompts(category);
+
+CREATE INDEX idx_ai_prompts_active
+ON ai_prompts(is_active);
