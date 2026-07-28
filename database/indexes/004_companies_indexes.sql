@@ -1,45 +1,23 @@
 -- ============================================
 -- ExportIQ
--- Indexes - Companies
--- Version: 1.0
+-- Companies Indexes
 -- ============================================
 
 BEGIN;
 
---------------------------------------------------
--- Company Name
---------------------------------------------------
-CREATE INDEX IF NOT EXISTS idx_companies_name
-ON companies(name);
+CREATE INDEX idx_companies_name
+    ON companies(name);
 
---------------------------------------------------
--- Website
---------------------------------------------------
-CREATE INDEX IF NOT EXISTS idx_companies_website
-ON companies(website);
+CREATE INDEX idx_companies_country
+    ON companies(country_id);
 
---------------------------------------------------
--- Country
---------------------------------------------------
-CREATE INDEX IF NOT EXISTS idx_companies_country
-ON companies(country_id);
+CREATE INDEX idx_companies_status
+    ON companies(status);
 
---------------------------------------------------
--- Company Code
---------------------------------------------------
-CREATE UNIQUE INDEX IF NOT EXISTS idx_companies_company_code
-ON companies(company_code);
+CREATE INDEX idx_companies_is_active
+    ON companies(is_active);
 
---------------------------------------------------
--- Active Companies
---------------------------------------------------
-CREATE INDEX IF NOT EXISTS idx_companies_is_active
-ON companies(is_active);
-
---------------------------------------------------
--- Created Date
---------------------------------------------------
-CREATE INDEX IF NOT EXISTS idx_companies_created_at
-ON companies(created_at);
+CREATE INDEX idx_companies_last_verified
+    ON companies(last_verified);
 
 COMMIT;
