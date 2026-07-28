@@ -1,0 +1,8 @@
+CREATE INDEX idx_ai_recommendations_analysis
+ON ai_recommendations(ai_analysis_id);
+
+CREATE INDEX idx_ai_recommendations_type
+ON ai_recommendations(recommendation_type);
+
+CREATE INDEX idx_ai_recommendations_priority
+ON ai_recommendations(priority);
