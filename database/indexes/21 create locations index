@@ -1,0 +1,14 @@
+CREATE INDEX idx_locations_country
+ON locations(country_id);
+
+CREATE INDEX idx_locations_city
+ON locations(city);
+
+CREATE INDEX idx_locations_state
+ON locations(state_province);
+
+CREATE INDEX idx_locations_type
+ON locations(location_type);
+
+CREATE INDEX idx_locations_active
+ON locations(is_active);
