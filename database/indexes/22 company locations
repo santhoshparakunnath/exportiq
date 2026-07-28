@@ -1,0 +1,8 @@
+CREATE INDEX idx_company_locations_company
+ON company_locations(company_id);
+
+CREATE INDEX idx_company_locations_location
+ON company_locations(location_id);
+
+CREATE INDEX idx_company_locations_type
+ON company_locations(relationship_type);
