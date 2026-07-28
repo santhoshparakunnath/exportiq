@@ -1,0 +1,276 @@
+# Company Domain Specification
+
+Version: 1.0
+
+---
+
+# Purpose
+
+The Company Domain manages organisations participating in global trade.
+
+A company is the central entity within ExportIQ.
+
+Everything else in the platform ultimately relates to a company.
+
+Examples include:
+
+- Buyer
+- Supplier
+- Manufacturer
+- Distributor
+- Retailer
+- Brand Owner
+
+---
+
+# Scope
+
+The Company Domain is responsible for:
+
+- Company identity
+- Company lifecycle
+- Company status
+- Company relationships
+- Company verification
+- Company discoverability
+
+The Company Domain is NOT responsible for:
+
+- AI analysis
+- Products
+- Certifications
+- Contacts
+- Trade history
+
+These belong to their respective domains.
+
+---
+
+# Business Definition
+
+A company represents a legal organisation.
+
+A company may perform multiple business roles.
+
+A company may operate in multiple countries.
+
+A company may trade multiple products.
+
+A company exists independently of any role.
+
+---
+
+# Golden Record
+
+Every company has exactly one Golden Record.
+
+The Golden Record contains only verified business facts.
+
+Examples
+
+✓ Name
+
+✓ Website
+
+✓ Country
+
+✓ Headquarters
+
+✓ Status
+
+✓ Legal Name
+
+The Golden Record never stores:
+
+✗ AI summaries
+
+✗ AI recommendations
+
+✗ Buyer score
+
+✗ Opportunity score
+
+✗ Risk analysis
+
+Those belong to the AI Domain.
+
+---
+
+# Company Identity
+
+Every company has two identifiers.
+
+Internal Identifier
+
+- UUID
+
+External Identifier
+
+- Company Code
+- Example:
+  CMP-000001
+
+The Company Code is immutable.
+
+---
+
+# Company Lifecycle
+
+DISCOVERED
+
+↓
+
+IDENTIFIED
+
+↓
+
+ENRICHED
+
+↓
+
+VERIFIED
+
+↓
+
+ACTIVE
+
+↓
+
+DORMANT
+
+↓
+
+ARCHIVED
+
+A company may move forwards or backwards depending on new evidence.
+
+---
+
+# Verification
+
+A company becomes verified when one or more trusted sources confirm its existence.
+
+Verification sources include:
+
+- Government Registry
+- Company Website
+- Human Review
+- Trusted Data Provider
+
+---
+
+# Duplicate Detection
+
+A new company candidate is compared using:
+
+1. Website Domain
+
+2. Registration Number (future)
+
+3. Email Domain
+
+4. Company Name + Country
+
+5. AI Similarity
+
+Duplicate resolution should preserve all evidence.
+
+---
+
+# Relationships
+
+Company
+
+has many Roles
+
+has many Products
+
+has many Certifications
+
+has many Contacts
+
+has many AI Analyses
+
+has many Data Sources
+
+has many News Items
+
+has many Locations (future)
+
+---
+
+# Search Requirements
+
+Companies should be searchable by:
+
+- Name
+- Website
+- Country
+- Role
+- Product
+- Certification
+- Business Vertical
+- Employee Size
+- Revenue
+- Status
+- Verification Status
+
+---
+
+# Data Quality
+
+Every company should track:
+
+- Last Verified
+- Last Crawled
+- Source Count
+- Data Quality Score (future)
+
+---
+
+# Core Business Rules
+
+BR-001
+
+A company represents a legal organisation.
+
+BR-002
+
+A company may have multiple roles.
+
+BR-003
+
+A company may have multiple products.
+
+BR-004
+
+A company may have multiple certifications.
+
+BR-005
+
+A company has exactly one Golden Record.
+
+BR-006
+
+AI must never overwrite verified data.
+
+BR-007
+
+Every important fact should have evidence.
+
+BR-008
+
+Every company should be independently refreshable.
+
+---
+
+# Future Enhancements
+
+- Company hierarchy (Parent / Subsidiary)
+- Mergers & acquisitions
+- Multiple office locations
+- Multiple websites
+- Multiple brands
+- ESG information
+- Financial metrics
+- Trade statistics
