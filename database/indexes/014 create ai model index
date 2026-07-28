@@ -1,0 +1,5 @@
+CREATE INDEX idx_ai_models_provider
+ON ai_models(provider);
+
+CREATE INDEX idx_ai_models_active
+ON ai_models(is_active);
