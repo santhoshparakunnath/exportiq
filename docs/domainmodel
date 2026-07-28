@@ -1,51 +1,193 @@
+# ExportIQ Domain Model
+
+## Purpose
+
+ExportIQ is a Global Trade Intelligence Platform.
+
+The platform is designed to discover, enrich and continuously maintain knowledge about organisations participating in international trade.
+
+The system is built around business domains rather than database tables.
+
+---
+
 # Company Domain
 
-Purpose
+## Purpose
 
-Responsibilities
+Represents organisations participating in global trade.
 
-Business Rules
+Examples:
 
-Relationships
+- Buyer
+- Supplier
+- Manufacturer
+- Distributor
+- Retailer
+- Brand Owner
 
-Future Enhancements
+## Business Rules
+
+- A company is a legal organisation.
+- A company may have multiple roles.
+- A company may operate in multiple business verticals.
+- A company may operate in multiple countries.
+- A company has one Golden Record.
+- AI never modifies the Golden Record.
+- Every important fact should be traceable to evidence.
+
+## Relationships
+
+Company
+├── Roles
+├── Products
+├── Certifications
+├── Contacts
+├── Data Sources
+├── AI Analysis
+├── News
+└── Locations (future)
 
 ---
 
 # Product Domain
 
-...
+## Purpose
+
+Represents products traded internationally.
+
+Examples
+
+- Black Pepper
+- Cardamom
+- Turmeric
+- Coffee
+- Tea
+
+## Business Rules
+
+- Products exist independently of companies.
+- Multiple companies can trade the same product.
+- A company may buy, sell, manufacture or distribute a product.
+- HS Codes belong to products.
 
 ---
 
 # People Domain
 
-...
+## Purpose
+
+Represents people working for organisations.
+
+Examples
+
+- Procurement Manager
+- CEO
+- Export Manager
+
+## Business Rules
+
+- A person may work for multiple companies during their career.
+- Employment history should be preserved.
+- Contact information belongs to the person.
 
 ---
 
-# AI Domain
+# Certification Domain
 
-...
+## Purpose
+
+Represents recognised certifications.
+
+Examples
+
+- Organic
+- HACCP
+- ISO 22000
+- BRCGS
+- Halal
+- Kosher
+
+Business Rules
+
+- Certifications exist independently.
+- Companies may have multiple certifications.
 
 ---
 
 # Intelligence Domain
 
-...
+Purpose
 
-# Company
+Stores continuously changing intelligence.
 
-Represents a legal organisation participating in global trade.
+Examples
 
-A company can have multiple roles.
+- News
+- Trade events
+- Website changes
+- Product launches
+- Import data
 
-A company can have multiple products.
+Business Rules
 
-A company can have multiple contacts.
+- Intelligence never overwrites Golden Records.
+- Every intelligence item has a source.
 
-A company can have multiple data sources.
+---
 
-A company can have multiple AI analyses.
+# AI Domain
 
-The company table stores only the canonical (golden) record.
+Purpose
+
+Stores AI generated observations.
+
+Examples
+
+- Company Summary
+- Buyer Score
+- Opportunity Score
+- Risks
+- Recommendations
+
+Business Rules
+
+- AI output is versioned.
+- AI output has confidence scores.
+- AI output never replaces verified facts.
+
+---
+
+# Evidence Domain
+
+Purpose
+
+Stores provenance of information.
+
+Examples
+
+- Company Website
+- LinkedIn
+- Trade Directory
+- Customs Data
+- Government Registry
+
+Business Rules
+
+- Every important fact should have one or more sources.
+- Sources are independently refreshable.
+
+---
+
+# Core Design Principles
+
+1. Companies are the centre of the platform.
+
+2. Facts and AI are stored separately.
+
+3. Evidence is first-class data.
+
+4. Relationships are more valuable than individual records.
+
+5. Every entity should support future history tracking.
+
+6. Every entity should be extensible without redesign.
