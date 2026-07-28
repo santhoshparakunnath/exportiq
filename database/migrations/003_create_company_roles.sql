@@ -1,17 +1,9 @@
-CREATE TABLE IF NOT EXISTS company_roles (
-
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-
+CREATE TABLE company_roles (
+    id UUID PRIMARY KEY,
     name TEXT NOT NULL,
-
     description TEXT,
-
-    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    created_at TIMESTAMPTZ,
+    updated_at TIMESTAMPTZ,
 
     CONSTRAINT uq_company_role UNIQUE(name)
 );
-
-CREATE INDEX idx_company_role_name
-ON company_roles(name);
