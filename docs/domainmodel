@@ -1,0 +1,15 @@
+# Company
+
+Represents a legal organisation participating in global trade.
+
+A company can have multiple roles.
+
+A company can have multiple products.
+
+A company can have multiple contacts.
+
+A company can have multiple data sources.
+
+A company can have multiple AI analyses.
+
+The company table stores only the canonical (golden) record.
