@@ -1,0 +1,8 @@
+CREATE INDEX idx_ai_tags_analysis
+ON ai_tags(ai_analysis_id);
+
+CREATE INDEX idx_ai_tags_name
+ON ai_tags(tag);
+
+CREATE INDEX idx_ai_tags_category
+ON ai_tags(category);
